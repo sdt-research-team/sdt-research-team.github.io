@@ -1,0 +1,87 @@
+baseURL = "https://sendo-research-team.github.io"
+title = "Sendo Team"
+paginate = 5
+theme = "hugo-PaperMod"
+enableRobotsTXT = true
+buildDrafts = false
+buildFuture = false
+buildExpored = false
+googleAnalytics = "UA-123-45"
+publishDir = "docs"
+
+[minify]
+disableXML = true
+minifyOutput = true
+
+[params]
+env = "test"
+title = "Sendo Research Team"
+description = "Space for our blog on technology/or not-technology things"
+author = "Sendo Research Team"
+images = "<link or path of image for opengraph, twitter-cards>"
+ShowReadingTime = true
+ShowShareButtons = true
+comments = true
+defaultTheme = "auto"
+disableThemeToggle = false
+disableSpecial1stPost = false
+
+  [params.assets]
+  favicon = "<path / external url>"
+
+  [params.label]
+  text = "Home"
+
+  [params.profileMode]
+  enabled = false
+  title = "Mangat Rai Modi"
+
+    [[params.profileMode.buttons]]
+    name = "Posts"
+    url = "posts"
+
+    [[params.profileMode.buttons]]
+    name = "Tags"
+    url = "tags"
+
+  [params.homeInfoParams]
+  Title = "Hi there 👋"
+  Content = "This is Sendo Research Team. You will find our notes on various technology topics. Our interests are around Highly scalable architecture, Concurrency and Distributed systems."
+
+  [[params.socialIcons]]
+  name = "twitter"
+  url = "https://twitter.com/"
+
+  [[params.socialIcons]]
+  name = "stackoverflow"
+  url = "https://stackoverflow.com/"
+
+  [[params.socialIcons]]
+  name = "github"
+  url = "https://github.com/"
+
+  [[params.socialIcons]]
+  name = "linkedin"
+  url = "https://www.linkedin.com"
+
+  [[params.socialIcons]]
+  name = "email"
+  url = "mailto:"
+
+[params.analytics.google]
+SiteVerificationTag = "XYZabc"
+
+[[menu.main]]
+name = "Archives"
+url = "/archives/"
+weight = 5
+
+[[menu.main]]
+name = "Tags"
+url = "/tags/"
+weight = 10
+
+[sitemap]
+  changefreq = "daily"
+  filename = "sitemap.xml"
+  priority = 0.5
