@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://sendo-research-team.github.io/sitemap.xml
