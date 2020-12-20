@@ -46,7 +46,7 @@ disableSpecial1stPost = false
 
   [params.homeInfoParams]
   Title = "Hi there 👋"
-  Content = "This is Sendo Research Team. You will find our notes on various technology topics. Our interests are around Highly scalable architecture, Concurrency and Distributed systems."
+  Content = "**This is Sendo Research Team**. You will find our notes on various technology topics. Our interests are around Highly scalable architecture, Concurrency and Distributed systems."
 
   [[params.socialIcons]]
   name = "twitter"
