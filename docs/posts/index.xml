@@ -24,19 +24,9 @@ if err := Foo(); err != nil { return err } Redeclaration and reassignment For Sw
     </item>
     
     <item>
-      <title>Pointers</title>
-      <link>https://sendo-research-team.github.io/posts/pointers/</link>
-      <pubDate>Sat, 19 Dec 2020 09:57:01 +0700</pubDate>
-      
-      <guid>https://sendo-research-team.github.io/posts/pointers/</guid>
-      <description>Pointers Pointers provide a way to share data across program boundaries. Having the ability to share and reference data with a pointer provides the benefit of efficiency. There is only one copy of the data and everyone can see it changing. The cost is that anyone can change the data which can cause side effects in running programs.
-Notes  Use pointers to share data. Values in Go are always pass by value.</description>
-    </item>
-    
-    <item>
-      <title></title>
+      <title>Naming</title>
       <link>https://sendo-research-team.github.io/posts/naming/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 19 Dec 2020 09:57:01 +0700</pubDate>
       
       <guid>https://sendo-research-team.github.io/posts/naming/</guid>
       <description>Naming Table of content Package
@@ -45,6 +35,16 @@ Interface
 Semicolons
 Package Packages được sử dụng để tổ chức code sao cho việc đọc và tái sử dụng code dễ dàng hơn. Packages giúp phân chia code thành nhiều phần, do đó việc update ứng dụng cũng thuận tiện hơn.
 Tên một package nên được đặt một cách ngắn gọn và rõ nghĩa. Theo quy định chung của ngôn ngữ Golang thì nên dùng chuẩn Lower-case để đặt tên khi viết code trong Golang (bao gồm package, biến, hàm, &amp;hellip;) Lấy ví dụ những package trong thư viện golang thường là những danh từ đơn giản như: - time (hỗ trợ các thao tác liên quan đến xử lý thời gian) - list (dùng để dựng chuỗi liên kết đơn hoặc đôi)</description>
+    </item>
+    
+    <item>
+      <title>Pointers</title>
+      <link>https://sendo-research-team.github.io/posts/pointers/</link>
+      <pubDate>Sat, 19 Dec 2020 09:57:01 +0700</pubDate>
+      
+      <guid>https://sendo-research-team.github.io/posts/pointers/</guid>
+      <description>Pointers Pointers provide a way to share data across program boundaries. Having the ability to share and reference data with a pointer provides the benefit of efficiency. There is only one copy of the data and everyone can see it changing. The cost is that anyone can change the data which can cause side effects in running programs.
+Notes  Use pointers to share data. Values in Go are always pass by value.</description>
     </item>
     
   </channel>

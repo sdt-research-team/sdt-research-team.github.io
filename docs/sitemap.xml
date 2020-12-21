@@ -17,6 +17,13 @@
   </url>
   
   <url>
+    <loc>https://sendo-research-team.github.io/posts/naming/</loc>
+    <lastmod>2020-12-19T09:57:01+07:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://sendo-research-team.github.io/posts/pointers/</loc>
     <lastmod>2020-12-19T09:57:01+07:00</lastmod>
     <changefreq>daily</changefreq>
@@ -40,12 +47,6 @@
   <url>
     <loc>https://sendo-research-team.github.io/tags/</loc>
     <lastmod>2020-12-19T09:57:01+07:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://sendo-research-team.github.io/posts/naming/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
