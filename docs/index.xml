@@ -34,12 +34,17 @@ Notes  Use pointers to share data. Values in Go are always pass by value.</descr
     </item>
     
     <item>
-      <title>Naming</title>
+      <title></title>
       <link>https://sendo-research-team.github.io/posts/naming/</link>
-      <pubDate>Fri, 18 Dec 2020 09:57:01 +0700</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://sendo-research-team.github.io/posts/naming/</guid>
-      <description>Naming </description>
+      <description>Naming Table of content Package
+Variable
+Interface
+Semicolons
+Package Packages được sử dụng để tổ chức code sao cho việc đọc và tái sử dụng code dễ dàng hơn. Packages giúp phân chia code thành nhiều phần, do đó việc update ứng dụng cũng thuận tiện hơn.
+Tên một package nên được đặt một cách ngắn gọn và rõ nghĩa. Theo quy định chung của ngôn ngữ Golang thì nên dùng chuẩn Lower-case để đặt tên khi viết code trong Golang (bao gồm package, biến, hàm, &amp;hellip;) Lấy ví dụ những package trong thư viện golang thường là những danh từ đơn giản như: - time (hỗ trợ các thao tác liên quan đến xử lý thời gian) - list (dùng để dựng chuỗi liên kết đơn hoặc đôi)</description>
     </item>
     
     <item>
