@@ -1,5 +1,5 @@
 baseURL = "https://sendo-research-team.github.io"
-title = "Sendo Team"
+title = "Research Team"
 paginate = 5
 theme = "hugo-PaperMod"
 enableRobotsTXT = true
@@ -15,7 +15,7 @@ minifyOutput = true
 
 [params]
 env = "test"
-title = "Sendo Research Team"
+title = "Research Team"
 description = "Space for our blog on technology/or not-technology things"
 author = "Sendo Research Team"
 images = "<link or path of image for opengraph, twitter-cards>"
@@ -46,7 +46,7 @@ disableSpecial1stPost = false
 
   [params.homeInfoParams]
   Title = "Hi there 👋"
-  Content = "**This is Sendo Research Team**. You will find our notes on various technology topics. Our interests are around Highly scalable architecture, Concurrency and Distributed systems."
+  Content = "**This is Research Team**. You will find our notes on various technology topics. Our interests are around Highly scalable architecture, Concurrency and Distributed systems."
 
   [[params.socialIcons]]
   name = "twitter"

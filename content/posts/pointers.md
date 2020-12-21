@@ -275,8 +275,8 @@ fmt.Printf("%+v\n", an)
 * Interior pointer can point at fields inside structures without declaring those fields as pointers.
 * Use pointers when it makes sense don't overuse them.
 
-## Pass Values
+#### Pass Values
 
-Don't pass pointers as function arguments just to save a few bytes. If a function refers to its argument x only as *x throughout, then the argument shouldn't be a pointer. Common instances of this include passing a pointer to a string (*string) or a pointer to an interface value (*io.Reader). In both cases the value itself is a fixed size and can be passed directly. This advice does not apply to large structs, or even small structs that might grow.
+> Don't pass pointers as function arguments just to save a few bytes. If a function refers to its argument x only as *x throughout, then the argument shouldn't be a pointer. Common instances of this include passing a pointer to a string (*string) or a pointer to an interface value (*io.Reader). In both cases the value itself is a fixed size and can be passed directly. This advice does not apply to large structs, or even small structs that might grow.
 
 *- Toan Pham -*
