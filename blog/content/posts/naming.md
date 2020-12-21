@@ -5,6 +5,7 @@ draft: false
 tags: 
   - go
 ---
+
 # Naming
 
 ### Table of content
