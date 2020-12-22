@@ -1,6 +1,7 @@
 ---
 title: "Naming"
 date: 2020-12-19T09:57:01+07:00
+author: "Pham Quoc Dat"
 draft: false
 tags: 
   - go
