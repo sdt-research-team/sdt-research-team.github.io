@@ -234,9 +234,12 @@ Khác với tham chiếu (reference), biến con trỏ có thể không cần kh
 
 ## Tổng kết
 Trong bài học này, các bạn đã được tìm hiểu khái niệm con trỏ và một số khái niệm có liên quan. Việc sử dụng con trỏ thường có một số hoạt động chủ yếu: 
-(a) khai báo một con trỏ, 
-(b) gán địa chỉ cho con trỏ,
+(a) khai báo một con trỏ.
+(b) gán địa chỉ cho con trỏ.
 (c) truy cập đến địa chỉ mà con trỏ đang nắm giữ bằng dereference operator.
 
-Thử liên hệ một chút với cuộc sống thực tế, tưởng tượng rằng con đường nhà bạn (street) là bộ nhớ ảo, trên con đường đó có rất nhiều ngôi nhà (house), mỗi ngôi nhà đều được đánh số thứ tự gọi là địa chỉ nhà (house's address). Chúng ta tạm hình dung số người ở trong mỗi ngôi nhà (content) tương đương với nội dung của mỗi ô trên bộ nhớ ảo. Như vậy, address-of operator (&house) sẽ trả về địa chỉ của ngôi nhà, dereference operator (*&house) sẽ lấy ra số lượng người bên trong ngôi nhà có địa chỉ được xác định. Để sử dụng con trỏ trỏ đến mỗi ngôi nhà, chúng ta phải sử dụng một con trỏ kiểu House (giống với kiểu của từng ngôi nhà), giả sử con trỏ kiểu House được khai báo là House *h_ptr; thì con trỏ h_ptr có thể trỏ đến bất kì ngôi nhà nào trên con đường, và nó còn có thể thay đổi nội dung bên trong từng ngôi nhà mà nó trỏ đến.
+Thử liên hệ một chút với cuộc sống thực tế, tưởng tượng rằng con đường nhà bạn (street) là bộ nhớ ảo, trên con đường đó có rất nhiều ngôi nhà (house), mỗi ngôi nhà đều được đánh số thứ tự gọi là địa chỉ nhà (house's address). Chúng ta tạm hình dung số người ở trong mỗi ngôi nhà (content) tương đương với nội dung của mỗi ô trên bộ nhớ ảo. 
+
+Như vậy, address-of operator (&house) sẽ trả về địa chỉ của ngôi nhà, dereference operator (*&house) sẽ lấy ra số lượng người bên trong ngôi nhà có địa chỉ được xác định. Để sử dụng con trỏ trỏ đến mỗi ngôi nhà, chúng ta phải sử dụng một con trỏ kiểu House (giống với kiểu của từng ngôi nhà), giả sử con trỏ kiểu House được khai báo là House *h_ptr; thì con trỏ h_ptr có thể trỏ đến bất kì ngôi nhà nào trên con đường, và nó còn có thể thay đổi nội dung bên trong từng ngôi nhà mà nó trỏ đến.
+
 Con trỏ (Pointer) là một công cụ mạnh mẽ đặc trưng của ngôn ngữ Golang. Con trỏ cho phép chúng ta chia sẻ data của chương trình trên bộ nhớ ảo.
