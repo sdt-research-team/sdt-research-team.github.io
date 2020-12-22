@@ -1,6 +1,6 @@
 ---
 title: "Pointers"
-date: 2020-12-22T09:57:01+07:00
+date: 2020-12-18T09:57:01+07:00
 author: "Pham Minh Toan"
 draft: false
 tags: 
