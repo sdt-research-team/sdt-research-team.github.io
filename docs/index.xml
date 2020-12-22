@@ -39,10 +39,10 @@ Tên một package nên được đặt một cách ngắn gọn và rõ nghĩa.
     
     <item>
       <title>A Few Of Pointers</title>
-      <link>https://sendo-research-team.github.io/posts/pointers/</link>
+      <link>https://sendo-research-team.github.io/posts/a-few-of-pointers/</link>
       <pubDate>Fri, 18 Dec 2020 10:57:01 +0700</pubDate>
       
-      <guid>https://sendo-research-team.github.io/posts/pointers/</guid>
+      <guid>https://sendo-research-team.github.io/posts/a-few-of-pointers/</guid>
       <description>Pointers  A pointer is a variable that points to the address of another variable. In computer science, pointers are a form of indirection, and indirection can be a powerful tool.
  Pointers provide a way to share data across program boundaries. Having the ability to share and reference data with a pointer provides the benefit of efficiency. There is only one copy of the data and everyone can see it changing.</description>
     </item>

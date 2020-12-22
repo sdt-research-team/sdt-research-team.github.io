@@ -29,7 +29,7 @@ Virtual memory làm che giấu sự phân mảnh của bộ nhớ vật lý, khi
 ## Variable address & address-of operator
 Địa chỉ của biến mà chúng ta nhìn thấy thật ra chỉ là những giá trị đã được đánh số thứ tự đặt trên Virtual memory. Để lấy được địa chỉ ảo của biến trong chương trình, chúng ta sử dụng toán tử '&' đặt trước tên biến.
 ```go
-int x = 5;
+var x int = 5;
 fmt.Println(x) // print the value of variable x
 fmt.Println(&x) / print the memory address of variable x
 ```
@@ -44,7 +44,7 @@ Dereference operator
 Toán tử trỏ đến (dereference operator) hay còn gọi là indirection operator (toán tử điều hành gián tiếp) được kí hiệu bằng dấu sao " * " cho phép chúng ta lấy ra giá trị của vùng nhớ có địa chỉ cụ thể.
 Ví dụ:
 ```go
-int n = 5;
+var n int = 5
 
 fmt.Println(n)   //print the value of variable n
 fmt.Println(&n)   //print the virtual memory address of variable n
@@ -61,10 +61,10 @@ Kết quả của đoạn chương trình trên là:
 ```
 Ngoài việc truy xuất giá trị trong vùng nhớ của một địa chỉ cụ thể, toán tử trỏ đến (dereference operator) còn có thể dùng để thay đổi giá trị bên trong vùng nhớ đó.
 ```go
-int n = 5;
-fmt.Println(n);
-*n = 10;
-fmt.Println(n);
+var n int = 5
+fmt.Println(n)
+*n = 10
+fmt.Println(n)
 ```
 Kết quả đoạn chương trình này là:
 ```go
@@ -80,7 +80,7 @@ Khác với tham chiếu (reference), toán tử trỏ đến (dereference opera
 ## Con trỏ (Pointer)
 Với những khái niệm mình trình bày ở trên (một số khái niệm các bạn đã được học), bây giờ chúng ta có thể nói đến con trỏ (pointer).
 Một con trỏ (a pointer) là một biến được dùng để lưu trữ địa chỉ của biến khác.
-Khác với tham chiếu, con trỏ là một biến có địa chỉ độc lập so với vùng nhớ mà nó trỏ đến, nhưng giá trị bên trong vùng nhớ của con trỏ chính là địa chỉ của biến (hoặc địa chỉ ảo) mà nó trỏ tới.
+con trỏ là một biến có địa chỉ độc lập so với vùng nhớ mà nó trỏ đến, nhưng giá trị bên trong vùng nhớ của con trỏ chính là địa chỉ của biến (hoặc địa chỉ ảo) mà nó trỏ tới.
 ![Image 4](https://raw.githubusercontent.com/sendo-research-team/sendo-research-team.github.io/gh-pages/static/images/4.JPG)
 ￼
 
@@ -243,3 +243,5 @@ Thử liên hệ một chút với cuộc sống thực tế, tưởng tượng 
 Như vậy, address-of operator (&house) sẽ trả về địa chỉ của ngôi nhà, dereference operator (*&house) sẽ lấy ra số lượng người bên trong ngôi nhà có địa chỉ được xác định. Để sử dụng con trỏ trỏ đến mỗi ngôi nhà, chúng ta phải sử dụng một con trỏ kiểu House (giống với kiểu của từng ngôi nhà), giả sử con trỏ kiểu House được khai báo là House *h_ptr; thì con trỏ h_ptr có thể trỏ đến bất kì ngôi nhà nào trên con đường, và nó còn có thể thay đổi nội dung bên trong từng ngôi nhà mà nó trỏ đến.
 
 Con trỏ (Pointer) là một công cụ mạnh mẽ đặc trưng của ngôn ngữ Golang. Con trỏ cho phép chúng ta chia sẻ data của chương trình trên bộ nhớ ảo.
+
+*- Pham Minh Toan -*
