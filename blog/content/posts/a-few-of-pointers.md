@@ -14,7 +14,7 @@ tags:
 Pointers provide a way to share data across program boundaries. Having the ability to share and reference data with a pointer provides the benefit of efficiency. There is only one copy of the data and everyone can see it changing. The cost is that anyone can change the data which can cause side effects in running programs.
 
 ## Pass by Value
-```go
+```go 
 package main
 
 func main() {
@@ -43,7 +43,7 @@ func increment(inc int) {
 ```
 
 ## Sharing data
-```go
+```go 
 package main
 
 func main() {
@@ -79,124 +79,129 @@ func increment(inc *int) {
 * "Value of", what's in the box. "Address of" ( **&** ), where is the box.
 * The (*) operator declares a pointer variable and the "Value that the pointer points to".
 
-## Escape Analysis
-```go
-// 
-// 
+## How do i know if my variable lives on the Stack or the Heap?
+#### Does it matter ?
+* Does not matter for the correctness of your program.
+* Does affect the performance of your program.
+* Anything on the heap is managed by the Gabage Collectior.
+* The GC is very good, but it causes latency.
+	* For the whole program, not just the part creating garbage.
 
-// Sample program the mechanics of escape analysis.
-package main
+#### Do you need to know ?
+* If your program is not FAST ENOUGH...
+* And you have benchmarks to prove it...
+* And they show excessive heap allocations...
+* Then maybe you should look into it.
+* Optimize for correctness first, not performance.
 
-// user represents a user in the system.
-type user struct {
-	name  string
-	email string
+### Why is the i/o reader interface use this way ? 
+```go 
+// io.Reader 
+type Reader interface {
+	Read(p []byte) (n int, err error)
 }
-
-// main is the entry point for the application.
-func main() {
-	u1 := createUserV1()
-	u2 := createUserV2()
-
-	println("u1", &u1, "u2", u2)
+```
+Instead of 
+```go 
+type Reader interface {
+	Read(n int) (b []byte, err error)
 }
-
-// createUserV1 creates a user value and passed
-// a copy back to the caller.
-//go:noinline
-func createUserV1() user {
-	u := user{
-		name:  "Bill",
-		email: "bill@ardanlabs.com",
-	}
-
-	println("V1", &u)
-
-	return u
-}
-
-// createUserV2 creates a user value and shares
-// the value with the caller.
-//go:noinline
-func createUserV2() *user {
-	u := user{
-		name:  "Bill",
-		email: "bill@ardanlabs.com",
-	}
-
-	println("V2", &u)
-
-	return &u
-}
-
-/*
-// See escape analysis and inlining decisions.
-
-$ go build -gcflags -m=2
-# github.com/ardanlabs/gotraining/topics/go/language/pointers/example4
-./example4.go:24:6: cannot inline createUserV1: marked go:noinline
-./example4.go:38:6: cannot inline createUserV2: marked go:noinline
-./example4.go:14:6: cannot inline main: non-leaf function
-./example4.go:30:16: createUserV1 &u does not escape
-./example4.go:46:9: &u escapes to heap
-./example4.go:46:9: 	from ~r0 (return) at ./example4.go:46:2
-./example4.go:39:2: moved to heap: u
-./example4.go:44:16: createUserV2 &u does not escape
-./example4.go:18:16: main &u1 does not escape
-./example4.go:18:27: main &u2 does not escape
-
-// See the intermediate representation phase before
-// generating the actual arch-specific assembly.
-
-$ go build -gcflags -S
-0x0021 00033 (/.../example4.go:15)	CALL	"".createUserV1(SB)
-0x0026 00038 (/.../example4.go:15)	MOVQ	(SP), AX
-0x002a 00042 (/.../example4.go:15)	MOVQ	8(SP), CX
-0x002f 00047 (/.../example4.go:15)	MOVQ	16(SP), DX
-0x0034 00052 (/.../example4.go:15)	MOVQ	24(SP), BX
-0x0039 00057 (/.../example4.go:15)	MOVQ	AX, "".u1+40(SP)
-0x003e 00062 (/.../example4.go:15)	MOVQ	CX, "".u1+48(SP)
-0x0043 00067 (/.../example4.go:15)	MOVQ	DX, "".u1+56(SP)
-0x0048 00072 (/.../example4.go:15)	MOVQ	BX, "".u1+64(SP)
-0x004d 00077 (/.../example4.go:16)	PCDATA	$0, $1
-
-// See bounds checking decisions.
-
-go build -gcflags="-d=ssa/check_bce/debug=1"
-
-// See the actual machine representation by using
-// the disasembler.
-
-$ go tool objdump -s main.main example4
-TEXT main.main(SB) github.com/ardanlabs/gotraining/topics/go/language/pointers/example4/example4.go
-example4.go:15	0x104aaf1		e8aa000000		CALL main.createUserV1(SB)
-example4.go:15	0x104aaf6		488b0424		MOVQ 0(SP), AX
-example4.go:15	0x104aafa		488b4c2408		MOVQ 0x8(SP), CX
-example4.go:15	0x104aaff		488b542410		MOVQ 0x10(SP), DX
-example4.go:15	0x104ab04		488b5c2418		MOVQ 0x18(SP), BX
-example4.go:15	0x104ab09		4889442428		MOVQ AX, 0x28(SP)
-example4.go:15	0x104ab0e		48894c2430		MOVQ CX, 0x30(SP)
-example4.go:15	0x104ab13		4889542438		MOVQ DX, 0x38(SP)
-example4.go:15	0x104ab18		48895c2440		MOVQ BX, 0x40(SP)
-
-// See a list of the symbols in an artifact with
-// annotations and size.
-
-$ go tool nm example4
-104aba0 T main.createUserV1
-104ac70 T main.createUserV2
-104ad50 T main.init
-10be460 B main.initdone.
-104aad0 T main.main
-*/
 ```
 
+## Escape Analysis
+
+1. The Stack
+```go {linenos=table}
+func main()  {
+	n := 4
+	n2 := square(n)
+	println(n2)
+}
+
+func square(x int)int {
+	return x*x
+}
+```
+
+2. The Stack With Pointers 
+```go {linenos=table} {linenos=table}
+func main()  {
+	n := 4
+	inc(&n)
+	println(n)
+}
+
+func inc(x *int){
+	*x++
+}
+```
+
+3. Returnning Pointers 
+```go {linenos=table}
+func main()  {
+	n := answer()
+	println(*n/2)
+}
+
+func answer() *int {
+	x := 42
+	return &x
+}
+```
+
+> Sharing down typically stays on the stack.
+> Sharing up typically escapes to the heap.
+ [Link to the FAQ!](https://golang.org/doc/faq#stack_or_heap)
+
+ #### Let's ask the compiler !
+ ```go 
+ go help build
+ go tool compile -h
+ go build -gcflags -m=1 // -m print optimization decisions
+ ```
+
+### When are values constructed on the heap ?
 * When a value could be referenced after the function that constructs the value returns.
 * When the compiler determines a value is too large to fit on the stack.
 * When the compiler doesn’t know the size of a value at compile time.
-* When a value is decoupled through the use of function or interface values.
 
-## Garbage Collection History
+### Which stays on the stack ?
+```go 
+func main() {
+	b := read()
+	// use b
+}
+
+func read() []byte {
+	// return a new slice.
+	b := make([]byte, 32)
+	return b
+}
+```
+
+```go 
+func main() {
+	b := make([]byte, 32)
+	read(b)
+	// use b
+}
+
+func read(b []byte) {
+	// write into slice.
+}
+```
+## Points to remember 
+* Optimize for correctness, not performance.
+* Go only puts function variables on the stack if it can prove a variable is not used after the function returns.
+* Sharing down typically stays on the stack.
+* Sharing up typically escapes to the heap.
+* Ask the compiler to find out.
+* Don't guess. Use the tooling
+
+## Garbage Collection
+* Tracking memory allocations in heap memory.
+* Releasing allocations that are no longer needed.
+* Keeping allocations that are still in-use.
 
 ## Pointers in disguise
 Not all mutations require explicit use of a pointer. Go uses pointers behind the scenes for some of built-in collections.
@@ -205,7 +210,7 @@ Not all mutations require explicit use of a pointer. Go uses pointers behind the
 fun demolish(planets *map[string]string) <--  unnecessary pointer here
 ```
 * Slices point at arrays
-```go
+```go 
 a := []int16{1,2,3}
 b := a
 fmt.Println(a,b) // [1,2,3] [1,2,3]
@@ -220,7 +225,7 @@ fmt.Println(&b[0], &b[1]) // 0xc000090002 0xc000090004
 ### Pointers as parameters
 * Pointers are used to enable mutation across function and method boundaries.
 Function and method parameters are passed by value in Go. That means functions always operate on a copy of passed agruments. When a pointer is passed to a function, the function receives a copy of the memory address. By dereferencing the memory address, a function can mutate the value a pointer point to.
-```go
+```go 
 type person struct {
   name, address string
   age           int
@@ -243,7 +248,7 @@ fmt.Println("%+v\n", toan)
 Q: what age would toan be if the birthday(p person) function didn't use a pointer? 
 
 ### Pointer receivers
-```go 
+```go
 type person struct {
   name string
   age int
@@ -280,4 +285,4 @@ fmt.Printf("%+v\n", an)
 
 > Don't pass pointers as function arguments just to save a few bytes. If a function refers to its argument x only as *x throughout, then the argument shouldn't be a pointer. Common instances of this include passing a pointer to a string (*string) or a pointer to an interface value (*io.Reader). In both cases the value itself is a fixed size and can be passed directly. This advice does not apply to large structs, or even small structs that might grow.
 
-*- Toan Pham -*
+*- Pham Minh Toan -*
