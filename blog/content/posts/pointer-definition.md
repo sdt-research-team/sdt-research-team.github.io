@@ -234,9 +234,9 @@ Khác với tham chiếu (reference), biến con trỏ có thể không cần kh
 
 ## Tổng kết
 Trong bài học này, các bạn đã được tìm hiểu khái niệm con trỏ và một số khái niệm có liên quan. Việc sử dụng con trỏ thường có một số hoạt động chủ yếu: 
-(a) khai báo một con trỏ.
-(b) gán địa chỉ cho con trỏ.
-(c) truy cập đến địa chỉ mà con trỏ đang nắm giữ bằng dereference operator.
+* khai báo một con trỏ.
+* gán địa chỉ cho con trỏ.
+* truy cập đến địa chỉ mà con trỏ đang nắm giữ bằng dereference operator.
 
 Thử liên hệ một chút với cuộc sống thực tế, tưởng tượng rằng con đường nhà bạn (street) là bộ nhớ ảo, trên con đường đó có rất nhiều ngôi nhà (house), mỗi ngôi nhà đều được đánh số thứ tự gọi là địa chỉ nhà (house's address). Chúng ta tạm hình dung số người ở trong mỗi ngôi nhà (content) tương đương với nội dung của mỗi ô trên bộ nhớ ảo. 
 
