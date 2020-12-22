@@ -1,5 +1,5 @@
 ---
-title: "Pointers"
+title: "A Few Of Pointers"
 date: 2020-12-19T09:57:01+07:00
 author: "Pham Minh Toan"
 draft: false
