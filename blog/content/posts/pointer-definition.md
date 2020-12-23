@@ -15,13 +15,13 @@ Khi thao tác với các biến thông thường, chúng ta không cần quan t�
 Ví dụ:
 int16 money;
 Khi dòng lệnh này được CPU thực thi, một vùng nhớ có kích thước 2 bytes sẽ được cấp phát. Lấy ví dụ biến money này được đặt tại ô nhớ 1224 (trong địa chỉ ảo của máy tính).
-![Image 1](https://raw.githubusercontent.com/sendo-research-team/sendo-research-team.github.io/gh-pages/static/images/1.JPG)
+![Image 1](https://raw.githubusercontent.com/sdt-research-team/sdt-research-team.github.io/main/blog/static/images/1.JPG)
 ￼
 Bất cứ khi nào chương trình thấy các bạn sử dụng biến money trong câu lệnh, chương trình hiểu rằng cần tìm đến ô nhớ 1224 để lấy giá trị đó ra.
 
 ## Virtual memory & Physical memory
 Việc truy xuất dữ liệu trên bộ nhớ máy tính cần phải thông qua một số bước trung gian, người dùng không thể trực tiếp truy xuất vào các ô nhớ trên các thiết bị lưu trữ. Chúng ta chỉ có thể trỏ đến vùng nhớ ảo (virtual memory) trên máy tính, còn việc truy xuất đến bộ nhớ vật lý (physical memory) từ bộ nhớ ảo phải được thực hiện bởi thiết bị phần cứng có tên là Memory management unit (MMU) và một chương trình định vị địa chỉ bộ nhớ gọi là Virtual address space.
-![Image 2](https://raw.githubusercontent.com/sendo-research-team/sendo-research-team.github.io/gh-pages/static/images/2.JPG)
+![Image 2](https://raw.githubusercontent.com/sdt-research-team/sdt-research-team.github.io/main/blog/static/images/2.JPG)
 ￼
 
 Virtual memory làm che giấu sự phân mảnh của bộ nhớ vật lý, khiến chúng ta có cảm giác đang thao tác với các vùng nhớ liên tục. Trong hình trên, từ phía Virtual memory cho đến Physical memory thuộc về phần quản lý của hệ điều hành, lập trình viên và người dùng chúng ta không thể can thiệp trực tiếp đến trong quá trình máy tính đang hoạt động.
@@ -72,7 +72,7 @@ Kết quả đoạn chương trình này là:
 10
 ```
 Như vậy, dereference operator cho phép chúng ta thao tác trực tiếp trên Virtual memory mà không cần thông qua định danh (tên biến).
-![Image 3](https://raw.githubusercontent.com/sendo-research-team/sendo-research-team.github.io/gh-pages/static/images/3.JPG)
+![Image 3](https://raw.githubusercontent.com/sdt-research-team/sdt-research-team.github.io/main/blog/static/images/3.JPG)
 
 Mặc dù dereference operator có kí hiệu giống multiplication operator, nhưng các bạn có thể phân biệt được vì dereference operator là toán tử một ngôi, trong khi đó, multiplication operator là toán tử hai ngôi.
 Khác với tham chiếu (reference), toán tử trỏ đến (dereference operator) không tạo ra một tên biến khác, mà nó truy xuất trực tiếp đến vùng nhớ có địa chỉ cụ thể trên Virtual memory.
@@ -81,7 +81,7 @@ Khác với tham chiếu (reference), toán tử trỏ đến (dereference opera
 Với những khái niệm mình trình bày ở trên (một số khái niệm các bạn đã được học), bây giờ chúng ta có thể nói đến con trỏ (pointer).
 Một con trỏ (a pointer) là một biến được dùng để lưu trữ địa chỉ của biến khác.
 con trỏ là một biến có địa chỉ độc lập so với vùng nhớ mà nó trỏ đến, nhưng giá trị bên trong vùng nhớ của con trỏ chính là địa chỉ của biến (hoặc địa chỉ ảo) mà nó trỏ tới.
-![Image 4](https://raw.githubusercontent.com/sendo-research-team/sendo-research-team.github.io/gh-pages/static/images/4.JPG)
+![Image 4](https://raw.githubusercontent.com/sdt-research-team/sdt-research-team.github.io/main/blog/static/images/4.JPG)
 ￼
 
 Trong ví dụ trên, một con trỏ sau khi khai báo đã được cấp phát vùng nhớ tại địa chỉ 3255, và nó trỏ đến địa chỉ 1224, do đó, giá trị bên trong vùng nhớ của con trỏ là 1224.
@@ -138,7 +138,7 @@ var value int = 5;
 ptr = &value;
 ```
 Do đó, chúng ta cần sử dụng address-of operator để lấy ra địa chỉ ảo của biến rồi mới gán cho con trỏ được. Lúc này, biến ptr sẽ lưu trữ địa chỉ ảo của biến value.
-![Image 5](https://raw.githubusercontent.com/sendo-research-team/sendo-research-team.github.io/gh-pages/static/images/5.JPG)
+![Image 5](https://raw.githubusercontent.com/sdt-research-team/sdt-research-team.github.io/main/blog/static/images/5.JPG)
 ￼
 
 Chúng ta có thể nói rằng con trỏ ptr đang nắm giữ địa chỉ của biến value, cũng có thể nói con trỏ ptr trỏ đến biến value.
@@ -196,11 +196,11 @@ fmt.Println(*ptr)	//print the content of value
 ```
 Kết quả của đoạn chương trình trên như sau:
 
-![Image 6](https://raw.githubusercontent.com/sendo-research-team/sendo-research-team.github.io/gh-pages/static/images/6.JPG)
+![Image 6](https://raw.githubusercontent.com/sdt-research-team/sdt-research-team.github.io/main/blog/static/images/6.JPG)
 ￼
 Toán tử trỏ đến (dereference operator) được dùng để truy cập trực tiếp vào vùng nhớ có địa chỉ cụ thể trên bộ nhớ ảo (virtual memory), vì biến con trỏ ptr đang giữ địa chỉ của biến value nên khi đặt toán tử trỏ đến (dereference operator) trước con trỏ ptr, nó sẽ truy xuất giá trị tại địa chỉ mà con trỏ ptr đang giữ.
 Vì ptr có kiểu dữ liệu con trỏ int (int *), ptr chỉ có thể trỏ đến biến kiểu int. Lúc này, compiler hiểu rằng cần phân tích 4 bytes (đúng bằng kích thước kiểu int) trên bộ nhớ ảo tại địa chỉ mà ptr đang lưu trữ.
-![Image 7](https://raw.githubusercontent.com/sendo-research-team/sendo-research-team.github.io/gh-pages/static/images/7.JPG)
+![Image 7](https://raw.githubusercontent.com/sdt-research-team/sdt-research-team.github.io/main/blog/static/images/7.JPG)
 ￼
 
 Đây là lý do tại sao chúng ta cần khai báo kiểu dữ liệu của con trỏ. Nếu không khai báo kiểu dữ liệu cho con trỏ, toán tử trỏ đến (dereference operator) sẽ không biết phải phân tích bao nhiêu bytes tại địa chỉ con trỏ trỏ đến để tính toán được giá trị của vùng nhớ đó. Không những thế, đây còn là lý do kiểu dữ liệu của biến phải tương xứng với kiểu dữ liệu được khai báo cho con trỏ.
