@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Research Team</title>
-    <link>https://sendo-research-team.github.io/tags/</link>
+    <link>https://sdt-research-team.github.io/tags/</link>
     <description>Recent content in Tags on Research Team</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 19 Dec 2020 09:57:01 +0700</lastBuildDate><atom:link href="https://sendo-research-team.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 19 Dec 2020 09:57:01 +0700</lastBuildDate><atom:link href="https://sdt-research-team.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>go</title>
-      <link>https://sendo-research-team.github.io/tags/go/</link>
+      <link>https://sdt-research-team.github.io/tags/go/</link>
       <pubDate>Sat, 19 Dec 2020 09:57:01 +0700</pubDate>
       
-      <guid>https://sendo-research-team.github.io/tags/go/</guid>
+      <guid>https://sdt-research-team.github.io/tags/go/</guid>
       <description></description>
     </item>
     

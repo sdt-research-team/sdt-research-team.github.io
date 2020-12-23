@@ -1,4 +1,4 @@
-baseURL = "https://sendo-research-team.github.io"
+baseURL = "https://sdt-research-team.github.io"
 title = "Research Team"
 paginate = 5
 theme = "hugo-PaperMod"
