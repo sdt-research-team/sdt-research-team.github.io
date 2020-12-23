@@ -62,6 +62,31 @@ First a: 10
 ```
 
 ### For
+- Only `for` statment
+```go 
+// Like a C for
+for init; condition; post { }
+
+// Like a C while
+for condition { }
+
+// Like a C for(;;)
+for { }
+```
+
+- Loop through array, slice, string, map and channel using `range`
+```go
+for key, value := range oldMap {
+    newMap[key] = value
+}
+```
+- Multiple variables 
+```go
+// Reverse arr
+for i, j := 0, len(arr)-1; i < j; i, j = i+1, j-1 {
+    arr[i], arr[j] = arr[j], arr[i]
+}
+```
 
 ### Switch 
 #### Expression switch
@@ -102,7 +127,7 @@ var myInt16 int8 = 127
 		fmt.Println("Second case")
 	}
 ```
-More example, how about now? [(1)](#(1))
+More example, how about now? [(1)](#1)
 ```go
 var myInterface interface{} = int8(127)
 
@@ -120,6 +145,7 @@ case 1000: // Is overflows int8?
 ```go
 //Example of fallthrough
 var flavor = "strawberry"
+
 switch flavor {
     case "strawberry":
         fmt.Println(flavor, "is my favorite!")
@@ -155,7 +181,7 @@ func main() {
 }
 ```
 
-❓ How to break a loop while in a `case`? [(2)](#(2))
+❓ How to break a loop while in a `case`? [(2)](#2)
 
 #### Type switch
 
@@ -178,7 +204,7 @@ default:
 ```
 - `fallthough` is not allowed to use in **type switch**
 
-❓ `switch` vs `if & else` [(3)](#(3))
+❓ `switch` vs `if & else` [(3)](#3)
 
 ### Summary
 
