@@ -14,7 +14,8 @@ tags:
 [Package](#package)\
 [Variable](#variable)\
 [Interface](#interface)\
-[Semicolons](#semicolons)
+[Semicolons](#semicolons)\
+[Tools](#Tools)
 
 
 ### Package
@@ -185,5 +186,80 @@ Không nên như thế này
   }
 ```
 
+### Tools
+Kiểm tra format code bằng `gofmt` 
+
+```shell
+  	package main
+	import ("fmt") 
+	var(
+		a = 654
+		b = false
+		c   =2.651
+		d  =4+ 1i
+	) 
+	func main(){ fmt.Printf("d for Integer: %d\n", a)  
+		fmt.Printf( "t for Boolean: %t\n", b )
+		fmt.Printf("g for Float: %g\n",c)
+		fmt.Printf("e for Scientific Notation: %e\n",d)}
+```
+
+Chạy dong lệnh `gofmt -w file_name.go`, đoạn code sẽ được format lại theo chuẩn để dễ đọc hơn.
+
+```shell
+  	package main
+
+	import (
+		"fmt"
+	)
+
+	var (
+		a = 654
+		b = false
+		c = 2.651
+		d = 4 + 1i
+	)
+
+	func main() {
+		fmt.Printf("d for Integer: %d\n", a)
+		fmt.Printf("t for Boolean: %t\n", b)
+		fmt.Printf("g for Float: %g\n", c)
+		fmt.Printf("e for Scientific Notation: %e\n", d)
+	}
+```
+
+Kiểm tra naming convention bằng `golint`
+
+```shell
+  	package main
+ 
+	import (
+		"io/ioutil"
+		"log"
+		"fmt"
+		"os"
+	)
+	
+	func ReadFile() {
+		File_Data, err := ioutil.ReadFile("test.txt")
+		if err != nil {
+			log.Panicf("failed reading data from file: %s", err)
+		}
+		fmt.Printf("\nFile Content: %s", File_Data)
+	}
+	
+	func main() {
+		fmt.Printf("\n######## Read file #########\n")
+		ReadFile()
+	}
+```
+
+Chạy câu lệnh `golint FileName.go`, công cụ sẽ xuất ra những lỗi convention mà đoạn code đang có.
+
+```shell
+	main.go:9:1: exported function ReadFile should have comment or be unexported
+
+	main.go:10:2: don't use underscores in Go names; var File_Data should be FileData
+```
 
 *<p style="text-align: end;">- Pham Quoc Dat -</p>*
