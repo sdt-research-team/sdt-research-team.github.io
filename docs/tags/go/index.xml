@@ -5,7 +5,21 @@
     <link>https://sdt-research-team.github.io/tags/go/</link>
     <description>Recent content in go on Research Team</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 19 Dec 2020 09:57:01 +0700</lastBuildDate><atom:link href="https://sdt-research-team.github.io/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 14 Jan 2021 09:57:01 +0700</lastBuildDate><atom:link href="https://sdt-research-team.github.io/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Go Concurrency</title>
+      <link>https://sdt-research-team.github.io/posts/go-concurrency/</link>
+      <pubDate>Thu, 14 Jan 2021 09:57:01 +0700</pubDate>
+      
+      <guid>https://sdt-research-team.github.io/posts/go-concurrency/</guid>
+      <description>Table of content General
+Refferences
+General  If there&amp;rsquo;s one thing most people know about Go, is that it is designed for concurrency (1).
+&amp;ndash; Andrew Gerrand &amp;ndash;
+ Concurrent program Process and thread Concurrency vs parallel Goroutine The number of CPUs available simultaneously to executing goroutines is controlled by the GOMAXPROCS shell environment variable, whose default value is the number of CPU cores available (2)
+Channel Wait group Refferences (1) https://golang.</description>
+    </item>
+    
     <item>
       <title>Control Structures</title>
       <link>https://sdt-research-team.github.io/posts/control-structures/</link>
