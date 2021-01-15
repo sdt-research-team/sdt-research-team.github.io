@@ -13,11 +13,13 @@
       
       <guid>https://sdt-research-team.github.io/posts/go-concurrency/</guid>
       <description>Table of content General
+Goroutine
+Channel
+Wait group
 Refferences
 General  If there&amp;rsquo;s one thing most people know about Go, is that it is designed for concurrency (1).
 &amp;ndash; Andrew Gerrand &amp;ndash;
- Concurrent program Process and thread Concurrency vs parallel Goroutine The number of CPUs available simultaneously to executing goroutines is controlled by the GOMAXPROCS shell environment variable, whose default value is the number of CPU cores available (2)
-Channel Wait group Refferences (1) https://golang.</description>
+ Concurrent program Process and thread Concurrency vs parallel Goroutine The number of CPUs available simultaneously to executing goroutines is controlled by the GOMAXPROCS shell environment variable, whose default value is the number of CPU cores available (2)</description>
     </item>
     
     <item>

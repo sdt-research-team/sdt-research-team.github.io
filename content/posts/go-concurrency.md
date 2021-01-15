@@ -11,6 +11,9 @@ tags:
 ### Table of content
 
 [General](#general)\
+[Goroutine](#goroutine)\
+[Channel](#channel)\
+[Wait group](#wait-group)\
 [Refferences](#refferences)
 
 ### General
@@ -24,12 +27,12 @@ tags:
 
 #### Concurrency vs parallel
 
-#### Goroutine
+### Goroutine
 The number of CPUs available simultaneously to executing goroutines is controlled by the GOMAXPROCS shell environment variable, whose default value is the number of CPU cores available ([2](#2))
 
-#### Channel
+### Channel
 
-#### Wait group
+### Wait group
 
 
 
