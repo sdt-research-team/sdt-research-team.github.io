@@ -22,7 +22,11 @@ tags:
 > -- Andrew Gerrand -- 
 
 #### Concurrent program
+Today, modern systems are fast because they are using multiple cores. It is useful since we can split up bit process into smaller threads.
 
+However, many basic tutorial only allow you to use one processor core because using multiple cores requires real threads. And it is totally hard because each thread will finish at a different time, and usually out of order. In reality, some tasks may require you to combine the result of each thread, and be impacted by the order in which you combine the results.
+
+Instead of real threads, Go supports goroutines, which are lightweight threads. Go can handle goroutines by using tools from the language's stdlib itself. Moreover, Go can provide the right number of real threads to handle goroutines you spawn. 
 #### Process and thread
 
 #### Concurrency vs parallel
