@@ -12,9 +12,11 @@ tags:
 
 [General](#general)\
 [Goroutine](#goroutine)\
-[Channel](#channel)\
 [Wait group](#wait-group)\
-[Refferences](#refferences)
+[Channel](#channel)\
+[Worker pool](#worker-pool)\
+[Rate limit](#rate-limit)\
+[References](#references)
 
 ### General
 
@@ -30,14 +32,16 @@ tags:
 ### Goroutine
 The number of CPUs available simultaneously to executing goroutines is controlled by the GOMAXPROCS shell environment variable, whose default value is the number of CPU cores available ([2](#2))
 
-### Channel
-
 ### Wait group
 
+### Channel
+
+### Worker pool
+
+### Rate Limit
 
 
-
-### Refferences
+### References
 #### (1) 
 https://golang.org/doc/faq#What_operations_are_atomic_What_about_mutexes
 #### (2) 
