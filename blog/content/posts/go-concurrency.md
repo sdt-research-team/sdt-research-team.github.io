@@ -42,6 +42,9 @@ A go routine is initally created with 2kb of stack size. Each function in go alr
 | Scheduling           | Goroutines are co-operatively scheduled.                               | Threads are preemptively scheduled.                                                          |
 | Startup              | Goroutines have faster startup time.                                   | Threads have slower startup time.                                                            |
 | Stack                | Goroutines have growable segmented stacks.                             | Threads do not have growable segmented stacks.                                               |
+
+Let look for a simple Golang program
+<iframe src="https://medium.com/media/cb2b13070320a8f61711559f09133e10" allowfullscreen="" frameborder="0" height="653" width="680" title="goSimpleExecution.go" class="t u v hm aj" scrolling="auto"></iframe>
 #### Process and thread
 
 #### Concurrency vs parallel
