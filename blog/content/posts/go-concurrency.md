@@ -100,12 +100,52 @@ Output
 
 ### Wait group
 
-//TODO (1): waitgroup syntax in go\
-//TODO (2): example of waitgroup without goroutine \
-//TODO (3): what mem resource for a waitgroup => Waitgroup uses only stack memory\
-//TODO (4): but why the lib has too much line of code? => Semaphore
- 
+#### Basic syntax
+```go
+func worker(id int, wg *sync.WaitGroup) {
 
+    defer wg.Done() //Decrease counter by one
+
+    fmt.Printf("Worker %d starting\n", id)
+
+    time.Sleep(time.Second)
+    fmt.Printf("Worker %d done\n", id)
+}
+
+func main() {
+    var wg sync.WaitGroup
+
+    for i := 1; i <= 5; i++ {
+        wg.Add(1) //Increase counter by one
+        go worker(i, &wg)
+    }
+
+    wg.Wait() //Wait for counter until zero
+}
+```
+
+#### WaitGroup and concurrency
+WaitGroup is independent with concurrency programing. Because you can use it without any goroutines. Example:
+```go
+func waitGroupWithoutGoroutine() {
+	var wg = sync.WaitGroup{}
+	wg.Add(5)
+
+	for i := 1; i <= 5; i++ {
+		fmt.Println("Doing task #", i)
+		wg.Done()
+	}
+
+	wg.Wait()
+}
+```
+
+But WaitGroup is developed for concurrency. The type **WaitGroup** is in package *sync* which is provides basic synchronization primitives (thread or process synchronization frameworks). 
+
+#### WaitGroup specifications: 
+- Should not be copied. When passing a wait group variable to a goroutine function, it should be passed by pointer reference.
+- Use stack pointer to store counter value.
+ 
 ### Channel
 
 ### Worker pool
