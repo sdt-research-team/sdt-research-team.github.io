@@ -145,6 +145,10 @@ But WaitGroup is developed for concurrency. The type **WaitGroup** is in package
 #### WaitGroup specifications: 
 - Should not be copied. When passing a wait group variable to a goroutine function, it should be passed by pointer reference.
 - Use stack pointer to store counter value.
+
+#### WaitGroup on Production:
+//TODO (anhh): add example for waitgroup
+
  
 ### Channel
 
