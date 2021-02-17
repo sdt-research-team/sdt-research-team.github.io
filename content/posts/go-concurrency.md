@@ -31,6 +31,8 @@ However, many basic tutorial only allow you to use one processor core because us
 
 Instead of real threads, Go supports goroutines, which are lightweight threads. Go can handle goroutines by using tools from the language's stdlib itself. Moreover, Go can provide the right number of real threads to handle goroutines you spawn.
 
+At any point in time, one thread will be executing one goroutine and if that goroutine is blocked, then it will be swapped out for another goroutine that will execute on that thread. It looks like **thread scheduling** but handled by **Go runtime** and this is much faster.
+
 A go routine is initally created with 2kb of stack size. Each function in go already has a check if more stack is needed or not and the stack can be copied to another region in memory with twice the original size. This makes goroutine very light on resources.
 
 | Key                  | GoRoutine                                                              | Thread                                                                                       |
@@ -45,8 +47,7 @@ A go routine is initally created with 2kb of stack size. Each function in go alr
 | Stack                | Goroutines have growable segmented stacks.                             | Threads do not have growable segmented stacks.                                               |
 
 
-Let look for a simple Golang program
-<iframe src="https://medium.com/media/cb2b13070320a8f61711559f09133e10" allowfullscreen="" frameborder="0" height="653" width="680" title="goSimpleExecution.go" class="t u v hm aj" scrolling="auto"></iframe>
+Imagine, you have a web server, this server is handling 1000 requests per second. If an OS thread consume 1MB stack size per thread, that means it takes 1GB of RAM for that traffic
 #### Process and thread
 
 #### Concurrency vs parallel
