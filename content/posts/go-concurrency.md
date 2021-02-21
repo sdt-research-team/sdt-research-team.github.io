@@ -22,6 +22,8 @@ tags:
 
 > If there's one thing most people know about Go, is that it is designed for concurrency [(1)](#1). \
 > -- Andrew Gerrand --
+**concurrency and parallelism**
+Concurrency is the ability of a computer to deal with multiple things at once. And, concept of running multiple things in parallel known as parallelism
 
 #### Concurrent program
 

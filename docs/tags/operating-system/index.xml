@@ -20,9 +20,8 @@ Worker pool
 Rate limit
 References
 General  If there&amp;rsquo;s one thing most people know about Go, is that it is designed for concurrency (1).
-&amp;ndash; Andrew Gerrand &amp;ndash;
- Concurrent program Today, modern systems are fast because they are using multiple cores. It is useful since we can split up bit process into smaller threads.
-However, many basic tutorial only allow you to use one processor core because using multiple cores requires real threads.</description>
+&amp;ndash; Andrew Gerrand &amp;ndash; concurrency and parallelism Concurrency is the ability of a computer to deal with multiple things at once. And, concept of running multiple things in parallel known as parallelism
+ Concurrent program Today, modern systems are fast because they are using multiple cores.</description>
     </item>
     
   </channel>
