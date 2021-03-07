@@ -22,9 +22,15 @@ tags:
 
 > If there's one thing most people know about Go, is that it is designed for concurrency [(1)](#1). \
 > -- Andrew Gerrand --
-**concurrency and parallelism**
-Concurrency is the ability of a computer to deal with multiple things at once. And, concept of running multiple things in parallel known as parallelism
 
+#### Concurrency and parallelism
+Concurrency is the ability of a computer to deal with multiple things at once. And, concept of running multiple things in parallel known as parallelism.
+
+
+#### Process and thread
+A process is created by the operating system for the application. The job of the process is to act like a container for all the resources the application uses and maintains as it runs. These resources include things like a memory address space, handles to files, devices and threads.
+
+A thread is a path of execution that is scheduled by the operating system to execute the code we write. The process starts with 1 thread, the main thread, and when that thread terminates the process terminates. This is because the main thread is the origin for the application. The main thread can then in turn launch more threads and those threads can launch even more threads.
 #### Concurrent program
 
 Today, modern systems are fast because they are using multiple cores. It is useful since we can split up bit process into smaller threads.
@@ -50,9 +56,6 @@ A go routine is initally created with 2kb of stack size. Each function in go alr
 
 
 Imagine, you have a web server, this server is handling 1000 requests per second. If an OS thread consume 1MB stack size per thread, that means it takes 1GB of RAM for that traffic
-#### Process and thread
-
-#### Concurrency vs parallel
 
 ### Goroutine
 
