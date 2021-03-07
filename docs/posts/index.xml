@@ -20,8 +20,9 @@ Worker pool
 Rate limit
 References
 General  If there&amp;rsquo;s one thing most people know about Go, is that it is designed for concurrency (1).
-&amp;ndash; Andrew Gerrand &amp;ndash; concurrency and parallelism Concurrency is the ability of a computer to deal with multiple things at once. And, concept of running multiple things in parallel known as parallelism
- Concurrent program Today, modern systems are fast because they are using multiple cores.</description>
+&amp;ndash; Andrew Gerrand &amp;ndash;
+ Concurrency and parallelism Concurrency is the ability of a computer to deal with multiple things at once. And, concept of running multiple things in parallel known as parallelism.
+Process and thread A process is created by the operating system for the application.</description>
     </item>
     
     <item>
