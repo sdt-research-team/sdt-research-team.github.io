@@ -23,8 +23,7 @@ tags:
 > If there's one thing most people know about Go, is that it is designed for concurrency [(1)](#1). \
 > -- Andrew Gerrand --
 
-#### Concurrency and parallelism
-Concurrency is the ability of a computer to deal with multiple things at once. And, concept of running multiple things in parallel known as parallelism.
+
 
 
 #### Process and thread
@@ -54,8 +53,27 @@ A go routine is initally created with 2kb of stack size. Each function in go alr
 | Startup              | Goroutines have faster startup time.                                   | Threads have slower startup time.                                                            |
 | Stack                | Goroutines have growable segmented stacks.                             | Threads do not have growable segmented stacks.                                               |
 
-
 Imagine, you have a web server, this server is handling 1000 requests per second. If an OS thread consume 1MB stack size per thread, that means it takes 1GB of RAM for that traffic
+
+
+
+#### Concurrency and parallelism
+
+> **Concurrency** is dealing with multiple things at once, **parallelism** is doing multiple things at once.
+
+![0_X0pg_FAWAv93kpii](../../static/images/0_X0pg_FAWAv93kpii.jpg)
+
+
+
+![0_8NBpRcm6HQ4tfxgs](../../static/images/0_8NBpRcm6HQ4tfxgs.jpg)
+
+*Source: https://medium.com/rungo/achieving-concurrency-in-go-3f84cbf870ca*
+
+
+
+**How about on single core?**
+
+
 
 ### Goroutine
 
