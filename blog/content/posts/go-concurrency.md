@@ -23,6 +23,13 @@ tags:
 > If there's one thing most people know about Go, is that it is designed for concurrency [(1)](#1). \
 > -- Andrew Gerrand --
 
+
+
+
+#### Process and thread
+A process is created by the operating system for the application. The job of the process is to act like a container for all the resources the application uses and maintains as it runs. These resources include things like a memory address space, handles to files, devices and threads.
+
+A thread is a path of execution that is scheduled by the operating system to execute the code we write. The process starts with 1 thread, the main thread, and when that thread terminates the process terminates. This is because the main thread is the origin for the application. The main thread can then in turn launch more threads and those threads can launch even more threads.
 #### Concurrent program
 
 Today, modern systems are fast because they are using multiple cores. It is useful since we can split up bit process into smaller threads.
@@ -50,9 +57,24 @@ A go routine is initally created with 2kb of stack size. Each function in go alr
 Imagine, you have a web server, this server is handling 1000 requests per second. If an OS thread consume 1MB stack size per thread, that means it takes 1GB of RAM for that traffic.
 
 In case of goroutines, since stack size can grow dynamically, you can spawn 1000 goroutines without problems. As a goroutine starts with 8KB, most of them generally do not grow bigger than that 
-#### Process and thread
 
-#### Concurrency vs parallel
+#### Concurrency and parallelism
+
+> **Concurrency** is dealing with multiple things at once, **parallelism** is doing multiple things at once.
+
+![0_X0pg_FAWAv93kpii](../../static/images/0_X0pg_FAWAv93kpii.jpg)
+
+
+
+![0_8NBpRcm6HQ4tfxgs](../../static/images/0_8NBpRcm6HQ4tfxgs.jpg)
+
+*Source: https://medium.com/rungo/achieving-concurrency-in-go-3f84cbf870ca*
+
+
+
+**How about on single core?**
+
+
 
 ### Goroutine
 
@@ -149,10 +171,9 @@ But WaitGroup is developed for concurrency. The type **WaitGroup** is in package
 - Should not be copied. When passing a wait group variable to a goroutine function, it should be passed by pointer reference.
 - Use stack pointer to store counter value.
 
-#### WaitGroup on Production:
-//TODO (anhh): add example for waitgroup
 
- 
+
+
 ### Channel
 
 ### Worker pool
