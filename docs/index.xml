@@ -21,7 +21,9 @@ Rate limit
 References
 General  If there&amp;rsquo;s one thing most people know about Go, is that it is designed for concurrency (1).
 &amp;ndash; Andrew Gerrand &amp;ndash;
- Process and thread A process is created by the operating system for the application. The job of the process is to act like a container for all the resources the application uses and maintains as it runs.</description>
+ Concurrency and parallelism  Concurrency is dealing with multiple things at once, parallelism is doing multiple things at once.
+ Concurrency is not parallelism, although it enables parallelism.
+If you have only one processor, your program can still be concurrent but it cannot be parallel.</description>
     </item>
     
     <item>
