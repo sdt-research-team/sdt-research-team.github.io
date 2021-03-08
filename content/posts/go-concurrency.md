@@ -53,9 +53,10 @@ A go routine is initally created with 2kb of stack size. Each function in go alr
 | Startup              | Goroutines have faster startup time.                                   | Threads have slower startup time.                                                            |
 | Stack                | Goroutines have growable segmented stacks.                             | Threads do not have growable segmented stacks.                                               |
 
-Imagine, you have a web server, this server is handling 1000 requests per second. If an OS thread consume 1MB stack size per thread, that means it takes 1GB of RAM for that traffic
 
+Imagine, you have a web server, this server is handling 1000 requests per second. If an OS thread consume 1MB stack size per thread, that means it takes 1GB of RAM for that traffic.
 
+In case of goroutines, since stack size can grow dynamically, you can spawn 1000 goroutines without problems. As a goroutine starts with 8KB, most of them generally do not grow bigger than that 
 
 #### Concurrency and parallelism
 
