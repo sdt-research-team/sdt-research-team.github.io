@@ -77,10 +77,6 @@ Imagine, you have a web server, this server is handling 1000 requests per second
 
 In case of goroutines, since stack size can grow dynamically, you can spawn 1000 goroutines without problems. As a goroutine starts with 8KB, most of them generally do not grow bigger than that 
 
-**How about on single core?**
-
-
-
 ### Goroutine
 
 The number of CPUs available simultaneously to executing goroutines is controlled by the GOMAXPROCS shell environment variable, whose default value is the number of CPU cores available ([2](#2))
