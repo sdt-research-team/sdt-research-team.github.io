@@ -46,6 +46,9 @@ If you have only one processor, your program can still be concurrent but it cann
 A process is created by the operating system for the application. The job of the process is to act like a container for all the resources the application uses and maintains as it runs. These resources include things like a memory address space, handles to files, devices and threads.
 
 A thread is a path of execution that is scheduled by the operating system to execute the code we write. The process starts with 1 thread, the main thread, and when that thread terminates the process terminates. This is because the main thread is the origin for the application. The main thread can then in turn launch more threads and those threads can launch even more threads.
+
+![process and thread](https://codejournal.io/images/node-internals-post/threads.png?fbclid=IwAR3JRC_5XssHdKwhc6MXScEQ8vGxa1UGtIlHH3ycCB5Rw8mMwBFw1S6u1c4)
+
 #### Concurrent program in Golang
 
 Today, modern systems are fast because they are using multiple cores. It is useful since we can split up bit process into smaller threads.
